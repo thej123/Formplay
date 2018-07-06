@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FormPlay</title>
+  <meta charset="utf-8">
+  <style type="text/css">
+    table, th, td {
+        border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+    <!-- <form name="my_form" action="http://voyager.deanza.edu/~hso/cgi-bin/form420.cgi" method="POST" novalidate> -->
+    <form name="my_form" novalidate>
+
+        <table>
+            <tr>
+                <td>Category</td>
+                <td>Description</td>
+                <td>Unit Price</td>
+                <td>Quantity</td>
+                <td>Total Price</td>
+            </tr>
+            <tr>
+                <td rowspan=2>1</td>
+                <td>ABC</td>
+                <td>$10</td>
+                <td><input type="text" onfocus="this.oldvalue = this.value;" onchange="update_subtotals('abc', 'def', 10, 'subtotal_one', this.value, this.oldvalue);this.oldvalue = this.value;"></td>
+                <td><input id="abc" value="" disabled></td>
+            </tr>
+            <tr>
+                <td>DEF</td>
+                <td>$30</td>
+                <td><input type="text" onfocus="this.oldvalue = this.value;" onchange="update_subtotals('def', 'abc', 30, 'subtotal_one', this.value, this.oldvalue);this.oldvalue = this.value;"></td>
+                <td><input id="def" value="" disabled></td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: right">SubTotal $</td>
+                <td><input id="subtotal_one" value="" disabled></td>
+            </tr>
+            <tr>
+                <td rowspan=2>2</td>
+                <td>XYZ</td>
+                <td>$10</td>
+                <td><input type="text" onfocus="this.oldvalue = this.value;" onchange="update_subtotals('xyz', 'rst', 10, 'subtotal_two', this.value, this.oldvalue);this.oldvalue = this.value;"></td>
+                <td><input id="xyz" value="" disabled></td>
+            </tr>
+            <tr>
+                <td>RST</td>
+                <td>$20</td>
+                <td><input type="text" onfocus="this.oldvalue = this.value;" onchange="update_subtotals('rst', 'xyz', 20, 'subtotal_two', this.value, this.oldvalue);this.oldvalue = this.value;"></td>
+                <td><input id="rst" value="" disabled></td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: right">SubTotal $</td>
+                <td><input id="subtotal_two" value="" disabled></td>
+            </tr>
+            <tr>
+                <td rowspan=2>3</td>
+                <td>ASQWE</td>
+                <td>$60</td>
+                <td><input type="text" onfocus="this.oldvalue = this.value;" onchange="update_subtotals('asqwe', 'cderw', 60, 'subtotal_three', this.value, this.oldvalue);this.oldvalue = this.value;"></td>
+                <td><input id="asqwe" value="" disabled></td>
+            </tr>
+            <tr>
+                <td>CDERW</td>
+                <td>$90</td>
+                <td><input type="text" onfocus="this.oldvalue = this.value;" onchange="update_subtotals('cderw', 'asqwe', 90, 'subtotal_three', this.value, this.oldvalue);this.oldvalue = this.value;"></td>
+                <td><input id="cderw" value="" disabled></td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: right">SubTotal $</td>
+                <td><input id="subtotal_three" value="" disabled></td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: right">Total $</td>
+                <td><input name="total_one" value="" disabled></td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: right">Sales Tax (8.25%) $</td>
+                <td><input name="sales_tax" value="" disabled></td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: right">Total $</td>
+                <td><input name="total_two" value="" disabled></td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: right">Shipping and Handling $</td>
+                <td><input name="shipping" value="" disabled></td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: right">Grand Total $</td>
+                <td><input name="grand_total" value="" disabled></td>
+            </tr>
+        </table>
+
+
+
+        <br><br><br><br><br>
+
+
+        First Name: <input type="text" name="first" pattern=".{2,15}" required><br>
+        Last Name: <input type="text" name="last" pattern=".{2,15}" required><br>
+        Address: <input type="text" name="address" pattern=".{2,25}" required><br>
+        City: <input type="text" name="city" pattern=".{2,15}" required><br>
+        State: <input type="text" name="state" pattern=".{2,15}" required><br>
+        Zip: <input type="text" name="zip" pattern="[\d+]{5}|[\d+]{9}" placeholder="5 or 9 digits"required><br>
+        Phone: <input type="tel" name="phone" pattern="[\d+]{10}" placeholder="10 digits"required><br>
+        Email: <input type="email" name="email" required><br>
+        Credit Card Number: <input type="text" name="ccnum" pattern="[\d+]{16}" placeholder="16 digits"required><br>
+        Credit Card Type: <select name="cctype" required>
+                            <option>Amex</option>
+                            <option>Credit</option>
+                            <option>Debit</option>
+                        </select><br>
+        Credit Card Expiration: <input type="text" name="ccexpire" pattern="[\d+]{2}/[\d+]{4}" placeholder="mm/yyyy"required><br>
+        Comment: <textarea name="comment" rows="5" cols="50" pattern=".{1,200}" required></textarea><br>
+        <input type="hidden" name="myemail" value="myemailaddress@gmail.com"><br>
+        <input type="reset"><input type="submit">
+        </form>
+
+<script type="text/javascript" src="formplay.js"></script>
+<script type="text/javascript" src="submission.js"></script>
+<script type="text/javascript" src="tablelist.js"></script>
+</body>
+</html>

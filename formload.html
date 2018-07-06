@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Formload</title>
+  <meta charset="utf-8">
+  <style type="text/css">
+        a {
+            text-decoration: underline;
+            color: blue;
+        }
+  </style>
+</head>
+<body>
+    <a onclick="load_form('formplay.html')">ORDER FORM</a>
+    
+<script type="text/javascript">
+    // When 'order form' is clicked, load the assign7_form.html
+    function load_form(choice) {
+        if (choice != "") {
+            window.location = choice;
+        }
+	}
+</script>
+</body>
+</html>
